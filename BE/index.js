@@ -1,0 +1,10 @@
+const app = require("express")()
+const consign = require("consign")
+
+consign()
+    .include("src/models/connection.js")
+    .then("lib/config.js")
+    .then("src/controllers")
+    .then("src/routes")
+    .then("lib/boot.js")
+    .into(app)
